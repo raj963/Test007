@@ -1,0 +1,64 @@
+.app {
+  font-family: Arial, sans-serif;
+  background-color: #f0f0f0;
+  padding: 20px;
+}
+
+.dashboard {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.category {
+  background-color: #222;
+  color: white;
+  padding: 10px;
+  border-radius: 5px;
+  width: 300px;
+}
+
+.category-header {
+  background-color: #444;
+  padding: 5px;
+  border-radius: 3px;
+  font-size: 18px;
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.total {
+  background-color: #007bff;
+  padding: 5px 10px;
+  border-radius: 3px;
+}
+
+.details {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.detail {
+  display: flex;
+  justify-content: space-between;
+}
+
+.detail-name {
+  flex: 1;
+  text-align: left;
+}
+
+.detail-value {
+  flex: 0 0 50px;
+  text-align: right;
+  background-color: #555;
+  padding: 2px 5px;
+  border-radius: 3px;
+}
+
+.detail-value.zero {
+  background-color: #777;
+}
