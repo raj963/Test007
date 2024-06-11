@@ -1,0 +1,140 @@
+import React from 'react';
+
+const data = {
+  "Enablement": {
+    "total": 1152,
+    "details": {
+      "Enablement": 921,
+      "CTO Regional Enablement": 223,
+      "Sustainability": 0,
+      "Customer Success": 0,
+      "Risk & Controls": 0,
+      "Unmapped - Enablement": 8
+    }
+  },
+  "Service Management": {
+    "total": 1519,
+    "details": {
+      "Business Mgmt & General - SM": 1445,
+      "Command Centre Operations": 5,
+      "Change Management": 0,
+      "Central Governance - Change": 51,
+      "Data Centre & Service Resilience": 1,
+      "Service Review & Reporting": 0,
+      "Incident Management": 12,
+      "Service Availability Centre": 0,
+      "Transformation & Change": 0,
+      "Central Governance - Problem": 5,
+      "Service Recovery": 0
+    }
+  },
+  "Colleague & Collaboration": {
+    "total": 21269,
+    "details": {
+      "Collaboration": 19329,
+      "Corporate Real Estate": 907,
+      "Elevated Technology Services": 902,
+      "Real Time Communications": 81,
+      "Support & Operations": 42,
+      "Workspace": 0,
+      "Unmapped - Colleague & Collaboration": 0
+    }
+  },
+  "Connectivity": {
+    "total": 43179,
+    "details": {
+      "Contact Centre Infrastructure": 41669,
+      "Core Networks": 613,
+      "Network Endpoint Connectivity": 470,
+      "Network Functions": 358,
+      "Platforms Ops & Tooling": 51,
+      "Unmapped - Connectivity": 18
+    }
+  },
+  "Enterprise Infrastructure": {
+    "total": 6917,
+    "details": {
+      "Core Enterprise Platforms": 3714,
+      "Databases": 1410,
+      "Digital Business Automation": 484,
+      "Distributed Compute": 422,
+      "Hybrid Integration": 386,
+      "IBM i": 200,
+      "Resiliency & Support Svcs": 181,
+      "Storage & Data Protection Svc": 91,
+      "Unmapped - Enterprise Infrastructure": 29
+    }
+  },
+  "Cloud Services": {
+    "total": 171,
+    "details": {
+      "Cloud Platforms": 138,
+      "Cloud Servcs Data Centre Ops": 18,
+      "Unmapped - Cloud Services": 15
+    }
+  },
+  "DevOps Services": {
+    "total": 121,
+    "details": {
+      "DevOps Analytics & Insights": 92,
+      "DevOps Collaboration Services": 16,
+      "DevOps Core DevOps Services": 13,
+      "DevOps IBM,Test&Prod Services": 0,
+      "Product Management": 1
+    }
+  },
+  "Data Centers & Tech Centers": {
+    "total": 172,
+    "details": {
+      "Unmapped - Data Centers & Tech Centers": 172,
+      "Tech Centre - Poland": 0,
+      "Tech Centre - China": 0,
+      "Tech Centre - India": 0,
+      "Tech Centre - Mexico": 0
+    }
+  },
+  "Engineering & PE": {
+    "total": 2634,
+    "details": {
+      "Resiliency & Reliability Eng": 1378,
+      "Service Management Eng": 1054,
+      "Infrastructure Engineering": 132,
+      "Platform Engineering": 70,
+      "Workspace Engineering": 0
+    }
+  },
+  "CTO General": {
+    "total": 29,
+    "details": {
+      "CTO General": 29
+    }
+  }
+};
+
+const Category = ({ name, total, details }) => (
+  <div style={{ margin: '10px', padding: '10px', border: '1px solid #ccc' }}>
+    <h3>{name}: {total}</h3>
+    <ul>
+      {Object.entries(details).map(([key, value]) => (
+        <li key={key}>{key}: {value}</li>
+      ))}
+    </ul>
+  </div>
+);
+
+const Dashboard = ({ data }) => (
+  <div>
+    {Object.entries(data).map(([key, value]) => (
+      <Category key={key} name={key} total={value.total} details={value.details} />
+    ))}
+  </div>
+);
+
+const App = () => (
+  <div>
+    <h1>Dashboard</h1>
+    <Dashboard data={data} />
+  </div>
+);
+
+export default App;
