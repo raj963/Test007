@@ -1,4 +1,5 @@
 import React from 'react';
+import './App.css';
 
 const data = {
   "Enablement": {
@@ -112,18 +113,21 @@ const data = {
 };
 
 const Category = ({ name, total, details }) => (
-  <div style={{ margin: '10px', padding: '10px', border: '1px solid #ccc' }}>
-    <h3>{name}: {total}</h3>
-    <ul>
+  <div className="category">
+    <div className="category-header">{name}: <span className="total">{total}</span></div>
+    <div className="details">
       {Object.entries(details).map(([key, value]) => (
-        <li key={key}>{key}: {value}</li>
+        <div className="detail" key={key}>
+          <span className="detail-name">{key}</span>
+          <span className={`detail-value ${value === 0 ? 'zero' : ''}`}>{value}</span>
+        </div>
       ))}
-    </ul>
+    </div>
   </div>
 );
 
 const Dashboard = ({ data }) => (
-  <div>
+  <div className="dashboard">
     {Object.entries(data).map(([key, value]) => (
       <Category key={key} name={key} total={value.total} details={value.details} />
     ))}
@@ -131,8 +135,7 @@ const Dashboard = ({ data }) => (
 );
 
 const App = () => (
-  <div>
-    <h1>Dashboard</h1>
+  <div className="app">
     <Dashboard data={data} />
   </div>
 );
