@@ -1,0 +1,119 @@
+import React from 'react';
+import './styles.css';
+
+const Dashboard = () => {
+  return (
+    <div className="dashboard">
+      <div className="category" id="enablement">
+        <h3>Enablement: 1152</h3>
+        <ul>
+          <li className="blue">Enablement: 921</li>
+          <li className="light-blue">CTO Regional Enablement: 223</li>
+          <li>Sustainability: 0</li>
+          <li>Customer Success: 0</li>
+          <li>Risk & Controls: 0</li>
+          <li className="gray">Unmapped - Enablement: 8</li>
+        </ul>
+      </div>
+      <div className="category" id="service-management">
+        <h3>Service Management: 1519</h3>
+        <ul>
+          <li className="blue">Business Mgmt & General - SM: 1445</li>
+          <li className="gray">Command Centre Operations: 5</li>
+          <li>Change Management: 0</li>
+          <li className="light-blue">Central Governance - Change: 51</li>
+          <li className="gray">Data Centre & Service Resilience: 1</li>
+          <li>Service Review & Reporting: 0</li>
+          <li className="gray">Incident Management: 12</li>
+          <li>Service Availability Centre: 0</li>
+          <li>Transformation & Change: 0</li>
+          <li className="gray">Central Governance - Problem: 5</li>
+          <li>Service Recovery: 0</li>
+        </ul>
+      </div>
+      <div className="category" id="colleague-collaboration">
+        <h3>Colleague & Collaboration: 21269</h3>
+        <ul>
+          <li className="blue">Collaboration: 19329</li>
+          <li className="light-blue">Corporate Real Estate: 907</li>
+          <li className="light-blue">Elevated Technology Services: 902</li>
+          <li className="gray">Real Time Communications: 81</li>
+          <li className="gray">Support & Operations: 42</li>
+          <li>Workspace: 0</li>
+          <li>Unmapped - Colleague & Collaboration: 0</li>
+        </ul>
+      </div>
+      <div className="category" id="connectivity">
+        <h3>Connectivity: 43179</h3>
+        <ul>
+          <li className="blue">Contact Centre Infrastructure: 41669</li>
+          <li className="light-blue">Core Networks: 613</li>
+          <li className="light-blue">Network Endpoint Connectivity: 470</li>
+          <li className="light-blue">Network Functions: 358</li>
+          <li className="gray">Platforms Ops & Tooling: 51</li>
+          <li className="gray">Unmapped - Connectivity: 18</li>
+        </ul>
+      </div>
+      <div className="category" id="enterprise-infrastructure">
+        <h3>Enterprise Infrastructure: 6917</h3>
+        <ul>
+          <li className="blue">Core Enterprise Platforms: 3714</li>
+          <li className="light-blue">Databases: 1410</li>
+          <li className="light-blue">Digital Business Automation: 484</li>
+          <li className="gray">Distributed Compute: 422</li>
+          <li className="gray">Hybrid Integration: 386</li>
+          <li className="gray">IBM i: 200</li>
+          <li className="gray">Resiliency & Support Svcs: 181</li>
+          <li className="gray">Storage & Data Protection Svc: 91</li>
+          <li className="gray">Unmapped - Enterprise Infrastructure: 29</li>
+        </ul>
+      </div>
+      <div className="category" id="cloud-services">
+        <h3>Cloud Services: 171</h3>
+        <ul>
+          <li className="blue">Cloud Platforms: 138</li>
+          <li className="light-blue">Cloud Servcs Data Centre Ops: 18</li>
+          <li className="gray">Unmapped - Cloud Services: 15</li>
+        </ul>
+      </div>
+      <div className="category" id="devops-services">
+        <h3>DevOps Services: 121</h3>
+        <ul>
+          <li className="blue">DevOps Analytics & Insights: 92</li>
+          <li className="light-blue">DevOps Collaboration Services: 16</li>
+          <li className="gray">DevOps Core DevOps Services: 13</li>
+          <li>DevOps IBM,Test&Prod Services: 0</li>
+          <li className="gray">Product Management: 1</li>
+        </ul>
+      </div>
+      <div className="category" id="data-centers">
+        <h3>Data Centers & Tech Centers: 172</h3>
+        <ul>
+          <li className="blue">Unmapped - Data Centers & Tech Centers: 172</li>
+          <li>Tech Centre - Poland: 0</li>
+          <li>Tech Centre - China: 0</li>
+          <li>Tech Centre - India: 0</li>
+          <li>Tech Centre - Mexico: 0</li>
+        </ul>
+      </div>
+      <div className="category" id="engineering-pe">
+        <h3>Engineering & PE: 2634</h3>
+        <ul>
+          <li className="blue">Resiliency & Reliability Eng: 1378</li>
+          <li className="blue">Service Management Eng: 1054</li>
+          <li className="light-blue">Infrastructure Engineering: 132</li>
+          <li className="gray">Platform Engineering: 70</li>
+          <li>Workspace Engineering: 0</li>
+        </ul>
+      </div>
+      <div className="category" id="cto-general">
+        <h3>CTO General: 29</h3>
+        <ul>
+          <li className="blue">CTO General: 29</li>
+        </ul>
+      </div>
+    </div>
+  );
+};
+
+export default Dashboard;
