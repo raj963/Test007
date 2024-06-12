@@ -1,0 +1,69 @@
+import React from 'react';
+import './App.css';
+
+const data = {
+  "Enablement": {
+    "total": 1152,
+    "details": {
+      "Enablement": 921,
+      "CTO Regional Enablement": 223,
+      "Sustainability": 0,
+      "Customer Success": 0,
+      "Risk & Controls": 0,
+      "Unmapped - Enablement": 8
+    }
+  },
+  "Service Management": {
+    "total": 1519,
+    "details": {
+      "Business Mgmt & General - SM": 1445,
+      "Command Centre Operations": 5,
+      "Change Management": 0,
+      "Central Governance - Change": 51,
+      "Data Centre & Service Resilience": 1,
+      "Service Review & Reporting": 0,
+      "Incident Management": 12,
+      "Service Availability Centre": 0,
+      "Transformation & Change": 0,
+      "Central Governance - Problem": 5,
+      "Service Recovery": 0
+    }
+  }
+};
+
+const Detail = ({ name, value }) => (
+  <div className="detail">
+    <span className="detail-name">{name}</span>
+    <span className={`detail-value ${value === 0 ? 'zero' : 'non-zero'}`}>{value}</span>
+  </div>
+);
+
+const Category = ({ name, total, details }) => (
+  <div className="category">
+    <div className="category-header">
+      <span>{name}</span>
+      <span className="total">{total}</span>
+    </div>
+    <div className="details">
+      {Object.entries(details).map(([key, value]) => (
+        <Detail key={key} name={key} value={value} />
+      ))}
+    </div>
+  </div>
+);
+
+const Dashboard = ({ data }) => (
+  <div className="dashboard">
+    {Object.entries(data).map(([key, value]) => (
+      <Category key={key} name={key} total={value.total} details={value.details} />
+    ))}
+  </div>
+);
+
+const App = () => (
+  <div className="app">
+    <Dashboard data={data} />
+  </div>
+);
+
+export default App;
