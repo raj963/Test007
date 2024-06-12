@@ -1,7 +1,7 @@
 import React from 'react';
 import './App.css';
 
-const data = {
+const demoData = {
   "Enablement": {
     "total": 1152,
     "details": {
@@ -31,38 +31,38 @@ const data = {
   }
 };
 
-const Detail = ({ name, value }) => (
-  <div className="detail">
-    <span className="detail-name">{name}</span>
-    <span className={`detail-value ${value === 0 ? 'zero' : 'non-zero'}`}>{value}</span>
+const DemoDetail = ({ name, value }) => (
+  <div className="demo-detail">
+    <span className="demo-detail-name">{name}</span>
+    <span className={`demo-detail-value ${value === 0 ? 'zero' : 'non-zero'}`}>{value}</span>
   </div>
 );
 
-const Category = ({ name, total, details }) => (
-  <div className="category">
-    <div className="category-header">
+const DemoCategory = ({ name, total, details }) => (
+  <div className="demo-category">
+    <div className="demo-category-header">
       <span>{name}</span>
-      <span className="total">{total}</span>
+      <span className="demo-total">{total}</span>
     </div>
-    <div className="details">
+    <div className="demo-details">
       {Object.entries(details).map(([key, value]) => (
-        <Detail key={key} name={key} value={value} />
+        <DemoDetail key={key} name={key} value={value} />
       ))}
     </div>
   </div>
 );
 
-const Dashboard = ({ data }) => (
-  <div className="dashboard">
+const DemoDashboard = ({ data }) => (
+  <div className="demo-dashboard">
     {Object.entries(data).map(([key, value]) => (
-      <Category key={key} name={key} total={value.total} details={value.details} />
+      <DemoCategory key={key} name={key} total={value.total} details={value.details} />
     ))}
   </div>
 );
 
 const App = () => (
-  <div className="app">
-    <Dashboard data={data} />
+  <div className="demo-app">
+    <DemoDashboard data={demoData} />
   </div>
 );
 
