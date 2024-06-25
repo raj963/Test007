@@ -1,0 +1,49 @@
+import React, { useState } from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faThumbsUp, faThumbsDown } from '@fortawesome/free-solid-svg-icons';
+
+const ThumbsComponent = () => {
+  const [thumbsUpHover, setThumbsUpHover] = useState(false);
+  const [thumbsDownHover, setThumbsDownHover] = useState(false);
+
+  const handleThumbsUpMouseEnter = () => setThumbsUpHover(true);
+  const handleThumbsUpMouseLeave = () => setThumbsUpHover(false);
+
+  const handleThumbsDownMouseEnter = () => setThumbsDownHover(true);
+  const handleThumbsDownMouseLeave = () => setThumbsDownHover(false);
+
+  const iconStyle = {
+    cursor: 'pointer',
+    fontSize: '2rem',
+    padding: '10px',
+    borderRadius: '5px',
+    transition: 'color 0.3s, background-color 0.3s',
+  };
+
+  return (
+    <div style={{ display: 'flex', gap: '20px' }}>
+      <FontAwesomeIcon
+        icon={faThumbsUp}
+        onMouseEnter={handleThumbsUpMouseEnter}
+        onMouseLeave={handleThumbsUpMouseLeave}
+        style={{
+          ...iconStyle,
+          color: thumbsUpHover ? 'white' : 'black',
+          backgroundColor: thumbsUpHover ? 'green' : 'transparent',
+        }}
+      />
+      <FontAwesomeIcon
+        icon={faThumbsDown}
+        onMouseEnter={handleThumbsDownMouseEnter}
+        onMouseLeave={handleThumbsDownMouseLeave}
+        style={{
+          ...iconStyle,
+          color: thumbsDownHover ? 'white' : 'black',
+          backgroundColor: thumbsDownHover ? 'red' : 'transparent',
+        }}
+      />
+    </div>
+  );
+};
+
+export default ThumbsComponent;
